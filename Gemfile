@@ -11,6 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem "jquery-rails"
+gem 'bootstrap'
 gem 'sass-rails', '~> 5.0'
 gem 'rails_12factor', group: :production
 gem 'dotenv-rails'
