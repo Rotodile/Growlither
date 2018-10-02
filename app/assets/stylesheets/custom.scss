@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import "bootstrap-sprockets";
+
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -59,6 +59,8 @@ body {
 
   #logo {
     float: left;
+    margin-bottom: 0;
+    margin-top: 0;
     margin-right: 10px;
     font-size: 1.7em;
     color: #fff;
@@ -78,14 +80,18 @@ body {
     float: left;
     width: 100%;
     margin-top: 45px;
-    @include box_sizing;
+    -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
   }
   
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  @include box_sizing;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
 
 input {
@@ -114,7 +120,9 @@ input {
   transition: 0.3s;
   padding: 10px;
   border-radius: 5px;
-  @include box_sizing;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
 
 .news:hover {
@@ -140,7 +148,9 @@ input {
   padding: 1px;
   border-radius: 5px;
   text-align: center;
-  @include box_sizing;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
 
 .friending {
@@ -484,4 +494,14 @@ html{
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+ul li {
+  display: block;
+}
+
+.nav .navbar-nav .navbar-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
