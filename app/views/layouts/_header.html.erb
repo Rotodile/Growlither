@@ -1,29 +1,16 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Growlithe", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", '/help' %></li>
-        <% if signed_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", '#' %></li>
-              <li><%= link_to "Settings", edit_user_registration_path %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path %>
-              </li>
-            </ul>
-          </li>
+<header>
+<div class="topnav">
+  <a class="logo" id="logo">Growlithe</a>
+  <a><%= link_to "Posts", '#' %></a>
+  <a><%= link_to "Help", '/help' %></a>
+   <% if signed_in? %>
+          <a><%= link_to "Users", '/users/index' %></a>
+              <a><%= link_to "Profile", '#' %></a>
+              <a><%= link_to "Settings", edit_user_registration_path %></a>
+                <a><%= link_to "Sign out", destroy_user_session_path %>
+              </a>
         <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <a><%= link_to "Sign in", new_user_session_path %></a>
         <% end %>
-      </ul>
-    </nav>
-  </div>
+</div> 
 </header>
