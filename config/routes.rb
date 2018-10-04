@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
   get '/help', to: 'static_pages#help'
-  resources :friendships, only: [:create, :update, :destroy]
   devise_for :users
   get 'users/new'
+  get 'users/show'
+  resources :friendships
+  resources :friend_requests
   get 'users/index'
-
+  get '/index', to:'static_pages#index'
+  root 'static_pages#home'
   devise_scope :user do 
     get "/users/sign_out" => "devise/sessions#destroy" 
   end

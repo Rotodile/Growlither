@@ -1,6 +1,6 @@
 <header>
 <div class="topnav">
-  <a class="logo" id="logo">Growlithe</a>
+  <a><%= link_to "Growlithe", root_path, id: "logo" %></a>
   <a><%= link_to "Posts", '#' %></a>
   <a><%= link_to "Help", '/help' %></a>
    <% if signed_in? %>
@@ -12,5 +12,29 @@
         <% else %>
           <a><%= link_to "Sign in", new_user_session_path %></a>
         <% end %>
+
+ <a
+      class="notifications"
+      onclick="showMenu()"
+      id=<%= @requests && @requests.count > 0 ? "pending_notifications" : "notifications" %>> 
+      <%= @requests && @requests.count > 0 ? "🔔#{@requests.count}": "🔔" %>
+    </a>
+    <% if signed_in? %>
+    <%= link_to("Friends", 
+                 users_index_path(user_friend_list: current_user.id),
+                 method: :get, id: "friend_list") %>
+    <% end %>
+
+  <% if @requests && @requests.count > 0 %>
+      <% @requests.each do |request| %>
+          <%= link_to(User.find(request.request_sender).name,
+              users_path(id: request.request_sender),
+              target: :_blank) %>   
+          <%= link_to("Accept", friendships_path(id: request.requester),
+              method: :post, class: "dropdown_link") %>
+          <%= link_to("Decline", friend_request_path(id: request.id),
+              method: :delete, class: "dropdown_link") %>
+      <% end %>
+  <% end %>
 </div> 
 </header>

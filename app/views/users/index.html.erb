@@ -1,21 +1,7 @@
-
-
-<ul>
-	<% @users.each do |user| %>
-		<li>
-			<%= user.email %> |
-			<%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
-		</li>
-	<% end %>
-</ul> 
-
-# Here is a list of your pending requests
-<ul>
-    <% current_user.requested_friendships.each do |request| %>
-    <li>
-      <%= request.email %>
-      <%= link_to "Accept",  friendship_path(id: request.id), method: "put" %>
-      <%= link_to "Decline", friendship_path(id: request.id), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+<% @users.each do |user| %>
+<% user.email %>
+ <% if allows_friends?(user) %>    
+          <%= link_to("Send friend request", friend_requests_path(id: user.id),
+              method: :post, class: "dropdown_link") %>
+        <% end %>
+<% end %>
