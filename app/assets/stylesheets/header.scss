@@ -1,0 +1,59 @@
+@import "bootstrap";
+
+.dropdown_link {
+    color: black;
+    text-decoration: none;
+    padding: 4px 8px 4px 8px;
+    font-size: 15px;
+  }
+  
+.dropdown_link:hover {
+    background-color: darkorange;
+    border-radius: 4px; 
+  }
+
+  #friend_list {
+    font-size: 15px;
+    font-weight: 1000;
+    padding: 5px 10px 5px 10px;
+    color: rgba(0,0,0,0.7);
+    letter-spacing: 3px;
+  }
+
+  .notifications {
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  a.notifications {
+    color: black;
+  }
+  
+  #pending_notifications {
+    color: rgb(175,0,0);
+    letter-spacing: 2px;
+  }
+  
+  .visible { 
+    display: block;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content ul li {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    height: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -13,6 +13,7 @@
           <a><%= link_to "Sign in", new_user_session_path %></a>
         <% end %>
 
+<div class="notification">
  <a
       class="notifications"
       onclick="showMenu()"
@@ -24,17 +25,22 @@
                  users_index_path(user_friend_list: current_user.id),
                  method: :get, id: "friend_list") %>
     <% end %>
-
-  <% if @requests && @requests.count > 0 %>
-      <% @requests.each do |request| %>
-          <%= link_to(User.find(request.request_sender).name,
-              users_path(id: request.request_sender),
-              target: :_blank) %>   
-          <%= link_to("Accept", friendships_path(id: request.requester),
-              method: :post, class: "dropdown_link") %>
-          <%= link_to("Decline", friend_request_path(id: request.id),
-              method: :delete, class: "dropdown_link") %>
-      <% end %>
-  <% end %>
+  </div>
 </div> 
 </header>
+
+ <% if @requests && @requests.count  %>
+    <div class="dropdown">
+      <% @requests.each do |request| %>
+        <ul class="dropdown-content">
+          <li><%= link_to(User.find(request.request_sender).name,
+              users_index_path(id: request.request_sender), class: "dropdown_link",
+              target: :_blank) %></li>   
+          <li><%= link_to("Accept", friendships_path(id: request.sender),
+              method: :post, class: "dropdown_link") %></li>
+          <li><%= link_to("Decline", friend_request_path(id: request.id),
+              method: :delete, class: "dropdown_link") %></li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
