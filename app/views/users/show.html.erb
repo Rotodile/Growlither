@@ -3,8 +3,3 @@
                      method: :delete, class: "button",
                      data: {:confirm => 'Are you sure?'}) %>
     <% end %> 
-    <div style="letter-spacing: 1px">
-      <%= link_to("Friend list", 
-                 index_path(user_friend_list: @user.id),
-                 method: :get, class: "button") %>
-    </div>

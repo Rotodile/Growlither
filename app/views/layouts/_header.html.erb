@@ -13,23 +13,21 @@
           <a><%= link_to "Sign in", new_user_session_path %></a>
         <% end %>
 
-<div class="notification">
- <a
-      class="notifications"
-      onclick="showMenu()"
-      id=<%= @requests && @requests.count > 0 ? "pending_notifications" : "notifications" %>> 
-      <%= @requests && @requests.count > 0 ? "🔔#{@requests.count}": "🔔" %>
-    </a>
-    <% if signed_in? %>
+         <% if signed_in? %>
     <%= link_to("Friends", 
                  users_index_path(user_friend_list: current_user.id),
                  method: :get, id: "friend_list") %>
     <% end %>
-  </div>
-</div> 
-</header>
 
- <% if @requests && @requests.count  %>
+<div class="notification">
+ <a
+      class="notifications"
+      onclick="toggleNotification()"
+      id=<%= @requests && @requests.count > 0 ? "pending_notifications" : "notifications" %>> 
+      <%= @requests && @requests.count > 0 ? "🔔#{@requests.count}": "🔔" %>
+    </a>
+
+    <% if @requests && @requests.count  %>
     <div class="dropdown">
       <% @requests.each do |request| %>
         <ul class="dropdown-content">
@@ -44,3 +42,7 @@
       <% end %>
     </div>
   <% end %>
+  </div>
+
+</div> 
+</header>
