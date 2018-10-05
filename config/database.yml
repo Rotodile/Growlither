@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: growlithe_production
-  username: growlithe
+  username: postgres
   password: <%= ENV['GROWLITHE_DATABASE_PASSWORD'] %>
