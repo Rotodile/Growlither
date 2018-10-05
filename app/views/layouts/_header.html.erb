@@ -12,13 +12,7 @@
         <% else %>
           <a><%= link_to "Sign in", new_user_session_path %></a>
         <% end %>
-
-         <% if signed_in? %>
-    <%= link_to("Friends", 
-                 users_index_path(user_friend_list: current_user.id),
-                 method: :get, id: "friend_list") %>
-    <% end %>
-
+        
 <div class="notification">
  <a
       class="notifications"
@@ -31,7 +25,7 @@
     <div class="dropdown">
       <% @requests.each do |request| %>
         <ul class="dropdown-content">
-          <li><%= link_to(User.find(request.request_sender).name,
+          <li><%= link_to(User.find(request.request_sender).email,
               users_index_path(id: request.request_sender), class: "dropdown_link",
               target: :_blank) %></li>   
           <li><%= link_to("Accept", friendships_path(id: request.sender),
