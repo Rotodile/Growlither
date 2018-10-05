@@ -1,16 +1,17 @@
 <header>
-<div class="topnav">
-  <a><%= link_to "Growlithe", root_path, id: "logo" %></a>
-  <a><%= link_to "Posts", '#' %></a>
-  <a><%= link_to "Help", '/help' %></a>
+<div class="topnav" id="myTopnav">
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+  <%= link_to "Growlithe", root_path, class: "active" %>
+  <%= link_to "Help", '/help' %>
    <% if signed_in? %>
-          <a><%= link_to "Users", '/users/index' %></a>
-              <a><%= link_to "Profile", '#' %></a>
-              <a><%= link_to "Settings", edit_user_registration_path %></a>
-                <a><%= link_to "Sign out", destroy_user_session_path %>
-              </a>
+          <%= link_to "Users", '/users/index' %>
+              <%= link_to "Settings", edit_user_registration_path %>
+                <%= link_to "Sign out", destroy_user_session_path %>
+              
         <% else %>
-          <a><%= link_to "Sign in", new_user_session_path %></a>
+          <%= link_to "Sign in", new_user_session_path %>
         <% end %>
         
 <div class="notification">
@@ -18,7 +19,7 @@
       class="notifications"
       onclick="toggleNotification()"
       id=<%= @requests && @requests.count > 0 ? "pending_notifications" : "notifications" %>> 
-      <%= @requests && @requests.count > 0 ? "🔔#{@requests.count}": "🔔" %>
+      <%= @requests && @requests.count > 0 ? "notifications #{@requests.count}": "notifications" %>
     </a>
 
     <% if @requests && @requests.count  %>
@@ -37,6 +38,5 @@
     </div>
   <% end %>
   </div>
-
 </div> 
 </header>

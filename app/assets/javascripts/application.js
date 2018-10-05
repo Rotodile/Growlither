@@ -2,14 +2,6 @@
 // listed below.
 //
 
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
 // vendor/assets/javascripts directory can be referenced here using a relative path.
 //
