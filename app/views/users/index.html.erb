@@ -1,7 +1,6 @@
 <% @users.each do |user| %>
 <ul class="users">
- <%= link_to user.name %>
-        <br>
+ <%= link_to user.email %>
         <% if allows_friends?(user) %>
           <%= link_to("Send friend request", friend_requests_path(id: user.id),
               method: :post, class: "dropdown_link") %>
