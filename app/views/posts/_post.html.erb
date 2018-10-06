@@ -3,6 +3,7 @@
   <span class="content"><%= post.content %>
   <%= image_tag post.picture.url if post.picture? %>
   </span>
+  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user %>

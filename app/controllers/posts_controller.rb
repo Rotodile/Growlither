@@ -13,6 +13,10 @@ class PostsController < ApplicationController
         end
     end
 
+    def index
+      @posts = Post.all
+    end
+
     def destroy
       @post.destroy
       flash[:success] = "Post deleted"
