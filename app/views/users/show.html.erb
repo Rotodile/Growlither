@@ -1,11 +1,31 @@
+<div class="profile-container">
+    
+<div class="image-div">
+  <img src="http://forum.fitzroysurgery.co.uk/img/avatar.png" alt="Avatar" class="image" ALIGN="left"/>
+  <div class="middle stuff">
+        <button class="btn-edit"><%= link_to 'Edit your profile', edit_user_registration_path %></button>
+  </div>
+</div>
+<div class="information">
+<h2 class="heading-user">User Information</h2>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>Name:</strong> Growlither</p>
+<p><strong>DOB:</strong> newborn Growlither</p>
+</div>
+
+
 <% if current_user.friends.include?(@user) %>
         <%= link_to("Unfriend", friendship_path(@user.id),
                      method: :delete, class: "button",
                      data: {:confirm => 'Are you sure?'}) %>
     <% end %> 
 
-     <div style="letter-spacing: 1px">
+     <div class="btn-friend-list">
       <%= link_to("Friend list", 
                  index_path(user_friend_list: @user.id),
                  method: :get, class: "button") %>
     </div>
+
+
+
+</div>

@@ -3,22 +3,6 @@
 <h1>Welcome to Growlithe!</h1>
 <center>This is the place where people came to share their advantures and experiences</center>
 
-<% if signed_in? %>
-<button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
-<% end %>
-
-<script>
-
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
 <div class="news">
 <h1 class="features">Top Features:</h1>
 <p> >> You can share your ideas with others by writing Articles on Growlithe.</p>

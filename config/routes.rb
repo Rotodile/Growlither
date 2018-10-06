@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/help', to: 'static_pages#help'
   devise_for :users
+  resources :users
   get 'users/new'
   get 'users/show'
   resources :friendships
