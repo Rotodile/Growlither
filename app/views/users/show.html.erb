@@ -2,7 +2,7 @@
     
 <div class="image-div">
 <% if @user.picture? %>
-<%= image_tag @user.picture.url %>
+<%= image_tag @user.picture %>
 <% else %>
   <img src="http://forum.fitzroysurgery.co.uk/img/avatar.png" alt="Avatar" class="image" ALIGN="left"/>
   <% end %>

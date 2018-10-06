@@ -1,23 +1,23 @@
-
-<div class="container">
-<h1>Welcome to Growlithe!</h1>
-<center>This is the place where people came to share their advantures and experiences</center>
+experiences</center>
 <% if signed_in? %>
   <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
+    <div class="col-md-4">
+      <div class="user_info">
         <%= render 'shared/user_info' %>
-      </section>
-      <section class="post_form">
+      </div>
+      <div class="post_form">
         <%= render 'shared/post_form' %>
-      </section>
-    </aside>
+      </div>
+    </div>
     <div class="col-md-8">
       <h3>Post Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
+<div class="container">
+<h1>Welcome to Growlithe!</h1>
+<center>This is the place where people came to share their advantures and 
 <div class="news">
 <h1 class="features">Top Features:</h1>
 <p> >> You can share your ideas with others by writing Articles on Growlithe.</p>
