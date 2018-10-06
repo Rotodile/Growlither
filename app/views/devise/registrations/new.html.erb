@@ -29,6 +29,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+   <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
+
   <div class="actions clearfix">
     <%= f.submit "Sign up", class: "signupbtn" %>
   </div>

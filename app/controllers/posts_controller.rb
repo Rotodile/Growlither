@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :signed_in_user, only: [:create, :destroy]
+    before_action :signed_in?, only: [:create, :destroy]
     before_action :correct_user,   only: :destroy
 
     def create
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :picture)
     end
 
     def correct_user

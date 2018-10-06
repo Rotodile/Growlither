@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :friendships
   resources :friend_requests
   resources :posts,          only: [:create, :destroy]
+  get 'users/show'
   get '/help', to: 'static_pages#help'
   get '/index', to:'static_pages#index'
   devise_scope :user do 

@@ -1,7 +1,11 @@
 <div class="profile-container">
     
 <div class="image-div">
+<% if @user.picture? %>
+<%= image_tag @user.picture.url %>
+<% else %>
   <img src="http://forum.fitzroysurgery.co.uk/img/avatar.png" alt="Avatar" class="image" ALIGN="left"/>
+  <% end %>
   <div class="middle stuff">
         <button class="btn-edit"><%= link_to 'Edit your profile', edit_user_registration_path %></button>
   </div>
