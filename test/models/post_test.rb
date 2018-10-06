@@ -3,8 +3,7 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:admin)
-    # This code is not idiomatically correct.
-    @post = Post.new(content: "Lorem ipsum", user_id: @user.id)
+    @post = @user.posts.build(content: 'lorem ipsum')
   end
 
   test "should be valid" do
@@ -26,4 +25,7 @@ class PostTest < ActiveSupport::TestCase
     assert_not @post.valid?
   end
 
+  test "order should be most recent first" do
+    assert_equal posts(:most_recent), Post.first
+  end
 end
