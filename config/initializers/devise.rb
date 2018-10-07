@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373', token_params: { parse: :json }
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -280,8 +281,6 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-
-  config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373', token_params: { parse: :json }
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
   #
