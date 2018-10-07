@@ -10,6 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'omniauth-facebook'
 gem 'will_paginate'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
