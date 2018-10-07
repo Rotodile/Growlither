@@ -2,8 +2,10 @@
 
 one:
   body: MyText
-  post: one
+  commentable_id: 1
+  commentable_type: MyString
 
 two:
   body: MyText
-  post: two
+  commentable_id: 1
+  commentable_type: MyString

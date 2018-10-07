@@ -17,6 +17,10 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
 
+    def show
+      @post = Post.find(params[:id])
+    end
+
     def destroy
       @post.destroy
       flash[:success] = "Post deleted"
@@ -26,7 +30,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:content, :picture)
+      params.permit(:content, :picture)
     end
 
     def correct_user

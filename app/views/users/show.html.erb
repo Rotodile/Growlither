@@ -37,7 +37,7 @@
   <div class="col-md-8">
     <% if @user.posts.any? %>
       <h3>Posts (<%= @user.posts.count %>)</h3>
-      <ol class="microposts">
+      <ol class="posts">
         <%= render @posts %>
       </ol>
     <% end %>

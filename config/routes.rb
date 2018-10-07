@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get '/posts', to: 'posts#index'
   resources :posts do
     resources :likes
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
   end
   
   devise_scope :user do 
