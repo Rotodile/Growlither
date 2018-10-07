@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373', token_params: { parse: :json }
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+
+config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373', token_params: { parse: :json }
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
