@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
   
     private
 
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
-    helper_method :current_user
   
     def get_requests
       @requests = current_user.requests_received.includes(:sender)

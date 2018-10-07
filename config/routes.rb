@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :friendships
   resources :friend_requests
   resources :posts,          only: [:create, :destroy]
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
   get 'users/show'
   get '/help', to: 'static_pages#help'
   get '/posts', to: 'posts#index'
