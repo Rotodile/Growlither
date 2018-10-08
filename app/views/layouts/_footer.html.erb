@@ -19,25 +19,24 @@
                 <div class="col-sm-3 myCols">
                     <h5>Shortcut Links</h5>
                     <ul>
-                        <li><a><%= link_to 'Sign out', '#' %></a></li>
-                        <li><a><%= link_to 'Sign up', '#' %></a></li>
-                        <li><a><%= link_to 'Sign in', '#' %></a></li>
+                        <li><a><%= link_to 'Sign out', destroy_user_session_path %></a></li>
+                        <li><a><%= link_to 'Sign up', new_user_registration_path %></a></li>
+                        <li><a><%= link_to 'Sign in', new_user_session_path %></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 myCols">
                     <h5>Logged in Links</h5>
                     <ul>
-                        <li><a><%= link_to 'Posts', '#' %></a></li>
-                        <li><a><%= link_to 'Users', '#'%></a></li>
+                        <li><a><%= link_to 'Posts', posts_path %></a></li>
+                        <li><a><%= link_to 'Users', users_path %></a></li>
                         <li><a><%= link_to 'Help', '/help' %></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 myCols">
                     <h5>User Options</h5>
                     <ul>
-                        <li><a><%= link_to 'Profile', '#' %></a></li>
+                        <li><a><%= link_to 'Profile', 'users/show' %></a></li>
                         </a></li>
-                        <li><a><%= link_to 'Articles'%></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 myCols">

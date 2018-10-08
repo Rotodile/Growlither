@@ -280,6 +280,13 @@ margin: auto !important;
     }
 }
 
+.help-section {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border: 2px solid rgba(200,032,144,.8);
+  padding: 20px;
+  margin-top: 20px;
+}
+
 .comments {
   box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.07),
   0px 5px 5px rgba(0,0,0,0.1);
