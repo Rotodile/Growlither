@@ -1,18 +1,15 @@
 <% if signed_in? %>
-  <div class="row">
-    <div class="col-md-4">
       <div class="user_info">
         <%= render 'shared/user_info' %>
       </div>
       <div class="post_form">
         <%= render 'shared/post_form' %>
       </div>
-    </div>
-    <div class="col-md-8">
+      <br />
+    <div class="col-md-8 post-feed">
       <h3>Post Feed</h3>
       <%= render 'shared/feed' %>
     </div>
-  </div>
 <% else %>
 <div class="container">
 <h1>Welcome to Growlithe!</h1>

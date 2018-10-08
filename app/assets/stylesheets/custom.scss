@@ -399,9 +399,6 @@ margin: auto !important;
     width: 40px;
 }
 
-.post-feed {
-  bottom: 900px;
-}
 
 .checkbox {
   margin-top: -10px;
@@ -415,5 +412,18 @@ margin: auto !important;
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.post-feed {
+  width: 100%; 
+  background-color: white;
+  border: 5px solid rgba(200,032,144,.8);
+  text-align: center;
+  margin-left: 15%;
+}
+
+.post_form {
+  width: 80%;
+
 }
 
