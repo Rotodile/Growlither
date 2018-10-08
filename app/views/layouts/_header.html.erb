@@ -6,7 +6,7 @@
   <%= link_to "Growlithe", root_path, class: "active" %>
   <%= link_to "Help", '/help' %>
    <% if signed_in? %>
-          <%= link_to "Users", '/users/index' %>
+          <%= link_to "Users", users_path %>
               <%= link_to "Settings", edit_user_registration_path %>
                 <%= link_to "Sign out", destroy_user_session_path %>
                 <%= link_to "Posts", '/posts' %>

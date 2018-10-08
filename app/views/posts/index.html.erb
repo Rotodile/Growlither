@@ -8,9 +8,6 @@
     (<%= time_ago_in_words(post.created_at) %> ago.)
     </span><br>
     <%= image_tag post.picture.url if post.picture? %><br><br>
-  <p>
-      <%= link_to("Show Page", post) %>
-  </p>
     <p class="pre-like"><%= pre_like = post.likes.find { |like| like.user_id == current_user.id} %></p>
 <% if pre_like %>
   <%= button_to 'Unlike', post_like_path(post, pre_like), class: 'btn btn-primary', method: :delete %>
@@ -24,7 +21,7 @@
 
 <%= form_for [post, Comment.new] do |f| %>
 <%= f.text_area :body, placeholder: "Add a comment" %><br/>
-<%= f.submit "Add Comment" %>
+<%= f.submit "Add Comment", class: "btn btn-primary" %>
 <% end %>
 <ul>
   <%= render(partial: 'comments/comment', collection: post.comments) %>

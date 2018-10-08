@@ -101,6 +101,23 @@
     background-color: rgba(200,032,144,.8);
     border: none;
 }
+
+.request-sender {
+    float: right;
+}
+
+.users-index {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.07),
+                0px 5px 5px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: rgba(200, 032, 144,.8);
+    border: 1px solid rgba(200,032,144,.8);
+  }  
 //-----------------media querries ------------------------\\
 @media(max-width:1000px){
     .information{

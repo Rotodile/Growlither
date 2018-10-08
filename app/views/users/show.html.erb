@@ -26,12 +26,9 @@
 
      <div class="btn-friend-list">
       <%= link_to("Friend list", 
-                 index_path(user_friend_list: @user.id),
+                 users_path(user_friend_list: @user.id),
                  method: :get, class: "button") %>
     </div>
-
-
-
 </div>
 
   <div class="col-md-8">

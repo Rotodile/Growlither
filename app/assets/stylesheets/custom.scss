@@ -268,15 +268,24 @@ margin: auto !important;
 }
 
 .post-container {
-  padding-top: 5px;
-  padding-right:20px;
-  padding-left: 20px;
-  background-color: rgb(250, 168, 138);
+  padding: 20px;
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border: 2px solid rgba(200,032,144,.8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+    .btn-primary {
+      background-color: rgba(200,032,144,.8);
+    }
 }
 
-.pre-like {
-  color: rgb(250, 168, 138);
+.comments {
+  box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.07),
+  0px 5px 5px rgba(0,0,0,0.1);
+  list-style: none;
+  margin-top: 10px;
+  padding: 5px;
 }
 
 #myFooter {
@@ -423,7 +432,13 @@ margin: auto !important;
 }
 
 .post_form {
-  width: 80%;
-
+  border: 5px solid rgba(200,032,144,.8);
+  width: 67%;
+  margin-left: 15%;
+  .btn-primary {
+    background-color: rgba(200, 032, 144,.8);
+    border: 1px solid rgba(200,032,144,.8);
+  }  
 }
+
 

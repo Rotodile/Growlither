@@ -1,9 +1,10 @@
+<h1>List of all users of Growlithe</h1>
 <% @users.each do |user| %>
-<ul class="users">
- <%= link_to user.email %>
+<ul class="users users-index">
+ <%= user.email %>
         <% if allows_friends?(user) %>
           <%= link_to("Send friend request", friend_requests_path(id: user.id),
-              method: :post, class: "dropdown_link") %>
+              method: :post, class: "request-sender") %>
         <% end %>
         </ul>
 <% end %>

@@ -1,6 +1,6 @@
 <li id="post-<%= post.id %>">
-  <span class="user"><%= link_to post.user.email, post.user %></span>
-  <span class="content"><%= post.content %>
+  <span class="user"><%= link_to post.user.email, post.user %>:</span>
+  <span class="content"><%= post.content %><br />
   <%= image_tag post.picture.url if post.picture? %>
   </span>
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
@@ -9,6 +9,6 @@
     <% if current_user %>
       <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
-    <% end %>
+    <% end %><hr />
   </span>
 </li>
