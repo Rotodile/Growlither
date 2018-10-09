@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  devise_scope :user do 
+    get "/users/sign_out" => "devise/sessions#destroy" 
+  end
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :users
+  resources :users, only: [:show, :index]
   resources :friendships
   resources :friend_requests
   resources :account_activations, only: [:edit]
@@ -15,9 +18,5 @@ Rails.application.routes.draw do
 
   resources :comments do
     resources :comments
-  end
-  
-  devise_scope :user do 
-    get "/users/sign_out" => "devise/sessions#destroy" 
   end
 end
