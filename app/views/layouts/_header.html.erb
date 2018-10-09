@@ -24,7 +24,7 @@
       <% @requests.each do |request| %>
         <ul class="dropdown-content">
           <li><%= link_to(User.find(request.request_sender).email,
-              users_index_path(id: request.request_sender), class: "dropdown_link",
+              users_path(id: request.request_sender), class: "dropdown_link",
               target: :_blank) %></li>   
           <li><%= link_to("Accept", friendships_path(id: request.sender),
               method: :post, class: "dropdown_link") %></li>
