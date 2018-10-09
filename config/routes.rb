@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :friend_requests
   resources :account_activations, only: [:edit]
   resources :posts,          only: [:create, :destroy]
-  get 'users/show'
   get '/help', to: 'static_pages#help'
   get '/posts', to: 'posts#index'
   resources :posts do
