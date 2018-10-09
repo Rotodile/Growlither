@@ -10,10 +10,7 @@
               <%= link_to "Settings", edit_user_registration_path %>
                 <%= link_to "Sign out", destroy_user_session_path %>
                 <%= link_to "Posts", '/posts' %>
-        <% else %>
-          <%= link_to "Sign in", new_user_session_path %>
-        <% end %>
-        
+       
 <div class="notification">
  <a
       class="notifications"
@@ -37,6 +34,9 @@
       <% end %>
     </div>
   <% end %>
+   <% else %>
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
   </div>
 </div> 
 </header>
