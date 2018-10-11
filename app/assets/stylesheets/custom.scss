@@ -448,4 +448,75 @@ margin: auto !important;
   }  
 }
 
+@media only screen and (max-width: 480px) {
+  .post-feed {
+    width: 100%; 
+    background-color: white;
+    border: 5px solid rgba(200,032,144,.8);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+   } 
+
+   img {
+     width: 200px;
+   }
+}
+
+@media only screen and (max-width: 770px) {
+  .post-container {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 2px solid rgba(200,032,144,.8);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media only screen and (max-width: 528px) {
+  .post-container {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 2px solid rgba(200,032,144,.8);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media only screen and (max-width: 430px) {
+  .post-container {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 2px solid rgba(200,032,144,.8);
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+.pre-like {
+  color: white;
+}
+
+
+@media only screen and (max-width: 375px) {
+  .post-container {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 2px solid rgba(200,032,144,.8);
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
 

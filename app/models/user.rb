@@ -1,8 +1,9 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  devise :omniauthable
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email
-  before_create :create_activation_digest
-  devise :omniauthable
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -18,8 +19,6 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
 
   has_many  :friendships, class_name: "Friendship", foreign_key: 'sender_id'
   has_many  :friends, through: :friendships, source: 'receiver'
@@ -43,11 +42,5 @@ class User < ApplicationRecord
    # Converts email to all lower-case.
    def downcase_email
     self.email = email.downcase
-  end
-
-  # Creates and assigns the activation token and digest.
-  def create_activation_digest
-    self.activation_token  = User.new_token
-    self.activation_digest = User.digest(activation_token)
   end
 end

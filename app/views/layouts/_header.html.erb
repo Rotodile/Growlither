@@ -1,9 +1,9 @@
 <header>
 <div class="topnav" id="myTopnav">
+ <%= link_to "Growlithe", root_path, class: "active" %>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
-  <%= link_to "Growlithe", root_path, class: "active" %>
   <%= link_to "Help", '/help' %>
    <% if signed_in? %>
           <%= link_to "Users", users_path %>
@@ -36,6 +36,7 @@
   <% end %>
    <% else %>
           <%= link_to "Sign in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path%>
         <% end %>
   </div>
 </div> 
