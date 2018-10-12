@@ -3,15 +3,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
-
-config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373', token_params: { parse: :json }
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'fb50d55ed10133cb67c610a22134c0cfe1373a9c2a1cfb1d0ea50d21a5ead82f536d91136314b667167ee1ab4022ee905114de5f73fa0ff3b872037635a919a9'
+  # config.secret_key = '5104d664f6d91d099ca25fd828746384600c436efa610835de20678a40f055aa0ff775a680a62aec6ef53765d7d548099a6983a52a95a4ac6d31aa713ed6104d'
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -117,7 +114,7 @@ config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373'
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a1929f31d149e1a8550b172ade5d1b8363ec108e8ec57425be2948a1b81aaaf38c20e85b6778a0fa4545caa755a1e3cc4ddf1756cd66f97ef57babdaa2fab893'
+  # config.pepper = '61705fed51c9669da3c5beaa55587ab87690c16e26919cd7ad48357d9b2911686844b199954d561064ca850daccc6924dcec8aaef44db14bfe29982bbe5f0c78'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -283,6 +280,7 @@ config.omniauth :facebook, '323983495073570', '2a3f51de88f93fcaee6abaa05dcfc373'
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
   #

@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get "/sign_up" => "devise/registrations#new"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'static_pages#home'
   devise_scope :user do 
     get "/users/sign_out" => "devise/sessions#destroy" 
- 
   end
   resources :users, only: [:show, :index]
   resources :friendships

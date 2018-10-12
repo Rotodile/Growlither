@@ -18,7 +18,6 @@
       id=<%= @requests && @requests.count > 0 ? "pending_notifications" : "notifications" %>> 
       <%= @requests && @requests.count > 0 ? "notifications #{@requests.count}": "notifications" %>
     </a>
-
     <% if @requests && @requests.count  %>
     <div class="dropdown">
       <% @requests.each do |request| %>
