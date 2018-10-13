@@ -5,8 +5,6 @@ Rails.application.routes.draw do
     get "/users/sign_out" => "devise/sessions#destroy" 
   end
   resources :users, only: [:show, :index]
-  resources :friendships
-  resources :friend_requests
   resources :account_activations, only: [:edit]
   resources :posts,          only: [:create, :destroy]
   get '/help', to: 'static_pages#help'

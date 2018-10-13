@@ -23,20 +23,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_115042) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "friend_requests", force: :cascade do |t|
-    t.integer "request_sender"
-    t.integer "request_receiver"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "friendships", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "user_id"

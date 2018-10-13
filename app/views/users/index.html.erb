@@ -2,9 +2,5 @@
 <% @users.each do |user| %>
 <ul class="users users-index">
  <%= user.email %>
-        <% if allows_friends?(user) %>
-          <%= link_to("Send friend request", friend_requests_path(id: user.id),
-              method: :post, class: "request-sender") %>
-        <% end %>
         </ul>
 <% end %>

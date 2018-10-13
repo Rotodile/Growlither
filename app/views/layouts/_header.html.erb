@@ -10,29 +10,6 @@
               <%= link_to "Settings", edit_user_registration_path %>
                 <%= link_to "Sign out", destroy_user_session_path %>
                 <%= link_to "Posts", '/posts' %>
-       
-<div class="notification">
- <a
-      class="notifications"
-      onclick="toggleNotification()"
-      id=<%= @requests && @requests.count > 0 ? "pending_notifications" : "notifications" %>> 
-      <%= @requests && @requests.count > 0 ? "notifications #{@requests.count}": "notifications" %>
-    </a>
-    <% if @requests && @requests.count  %>
-    <div class="dropdown">
-      <% @requests.each do |request| %>
-        <ul class="dropdown-content">
-          <li><%= link_to(User.find(request.request_sender).email,
-              users_path(id: request.request_sender), class: "dropdown_link",
-              target: :_blank) %></li>   
-          <li><%= link_to("Accept", friendships_path(id: request.sender),
-              method: :post, class: "dropdown_link") %></li>
-          <li><%= link_to("Decline", friend_request_path(id: request.id),
-              method: :delete, class: "dropdown_link") %></li>
-        </ul>
-      <% end %>
-    </div>
-  <% end %>
    <% else %>
           <%= link_to "Sign in", new_user_session_path %>
             <%= link_to "Sign up", new_user_registration_path%>
