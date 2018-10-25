@@ -2,5 +2,6 @@
 <% @users.each do |user| %>
 <ul class="users users-index">
  <%= user.email %>
+ <%= link_to "Add friend", user_add_friend_path(:user_id) %>
         </ul>
 <% end %>

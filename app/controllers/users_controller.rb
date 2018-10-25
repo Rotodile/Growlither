@@ -13,10 +13,17 @@ class UsersController < ApplicationController
     @user = current_user    
     if @user.update(user_params)
       flash[:success] = "Profile updated"
-      redirect_back(fallback_location: root_path) 
+      redirect_to root_path
     end
   end
 
+  def add_friend
+    if current_user.friend_request(@friendship)
+      redirect_to users_path, notice: "Friend request successfully sent."
+    else
+      redirect_to users_path, notice: "There was an error sending the friend request"
+    end
+  end
   private
 
     def user_params
