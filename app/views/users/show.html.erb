@@ -16,19 +16,6 @@
 <p><strong>Name:</strong> Growlither</p>
 <p><strong>DOB:</strong> newborn Growlither</p>
 </div>
-
-
-<% if current_user.friends.include?(@user) %>
-        <%= link_to("Unfriend", friendship_path(@user.id),
-                     method: :delete, class: "button",
-                     data: {:confirm => 'Are you sure?'}) %>
-    <% end %> 
-
-     <div class="btn-friend-list">
-      <%= link_to("Friend list", 
-                 friend_request_path(user_friend_list: @user.id),
-                 method: :get, class: "button") %>
-    </div>
 </div>
 
   <div class="col-md-8">
