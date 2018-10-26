@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def add_friend
-    if current_user.friend_request(@friendship)
+    @user = User.find(params[:id])
+    if current_user.friend_request(@user)
       redirect_to users_path, notice: "Friend request successfully sent."
     else
       redirect_to users_path, notice: "There was an error sending the friend request"
